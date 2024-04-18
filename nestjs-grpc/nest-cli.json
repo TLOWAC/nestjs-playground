@@ -4,10 +4,6 @@
   "sourceRoot": "apps/apigateway/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "assets": [
-      "**/*.proto"
-    ],
-    "watchAssets": true,
     "webpack": true,
     "tsConfigPath": "apps/apigateway/tsconfig.app.json"
   },
@@ -26,10 +22,14 @@
     "auth": {
       "type": "application",
       "root": "apps/auth",
-      "entryFile": "main",
-      "sourceRoot": "apps/auth/src",
+      "entryFile": "src/main",
+      "sourceRoot": "./",
       "compilerOptions": {
-        "tsConfigPath": "apps/auth/tsconfig.app.json"
+        "tsConfigPath": "apps/auth/tsconfig.app.json",
+        "assets": [
+          "**/*.proto"
+        ],
+        "watchAssets": true
       }
     },
     "common": {
