@@ -35,7 +35,7 @@ message UpdateUserDto {
 // PaginationDto 형식 정의
 message PaginationDto {
   int32 page = 1;
-  int32 size = 2;
+  int32 skip = 2;
 }
 
 // input/output 이 없는 경우의 형식 정의

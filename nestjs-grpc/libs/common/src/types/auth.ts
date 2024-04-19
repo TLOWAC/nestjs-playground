@@ -25,7 +25,7 @@ export interface UpdateUserDto {
 /** PaginationDto 형식 정의 */
 export interface PaginationDto {
   page: number;
-  size: number;
+  skip: number;
 }
 
 /** input/output 이 없는 경우의 형식 정의 */
@@ -54,7 +54,7 @@ export interface SocialMedia {
 
 export const AUTH_PACKAGE_NAME = "auth";
 
-/** 서비스 메서드 정의 */
+/** 유저 서비스 메서드 정의 */
 
 export interface UsersServiceClient {
   createUser(request: CreateUserDto): Observable<User>;
@@ -70,7 +70,7 @@ export interface UsersServiceClient {
   queryUsers(request: Observable<PaginationDto>): Observable<Users>;
 }
 
-/** 서비스 메서드 정의 */
+/** 유저 서비스 메서드 정의 */
 
 export interface UsersServiceController {
   createUser(request: CreateUserDto): Promise<User> | Observable<User> | User;
