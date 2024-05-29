@@ -7,7 +7,9 @@ export const DrizzleAsyncProvider = 'drizzleProvider';
 export const drizzleProvider = {
   provide: DrizzleAsyncProvider,
   useFactory: async () => {
-    const sqlite = new Database(process.env.DATABASE_URL);
+    const sqlite = new Database(process.env.DATABASE_URL, {
+      fileMustExist: true,
+    });
     const db = drizzle(sqlite, { schema });
     return db;
   },
