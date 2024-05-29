@@ -29,3 +29,5 @@ lerna-debug.log*
 # Node Modules
 node_modules
 
+# Build
+dist
